@@ -1,17 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import "./index.css";
+import React from "react";
+import ReactDOM from "react-dom";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+class App extends React.Component {
+  state = {
+    bgColor: "black",
+  };
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  onInputChange(e) {
+    this.setState({ bgColor: e.target.value });
+    this.changeColor();
+  }
+
+  changeColor() {
+    setTimeout(() => {
+      document.querySelector("body").style.backgroundColor = this.state.bgColor;
+    }, 500);
+  }
+
+  render() {
+    return (
+      <div className="container">
+        <input
+          type="text"
+          placeholder="Type a color"
+          onChange={(e) => this.onInputChange(e)}
+        />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.querySelector("#root"));
