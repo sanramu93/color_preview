@@ -1,6 +1,6 @@
 {
   "homepage": "http://sanramu93.github.io/color_preview",
-  "name": "color_changer",
+  "name": "color_preview",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,7 +14,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d buil",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
